@@ -1,7 +1,7 @@
-$automationAccount = "thisthis"
+### $automationAccount = "xx007"
 $method = "SA"
 $resourceGroupName = "homew"
-$UAMI = "xUAMI"
+$UAMI = "xxx007"
 
 # Ensures you do not inherit an AzContext in your runbook
 Disable-AzContextAutosave -Scope Process | Out-Null
@@ -53,8 +53,8 @@ else {
 
 
 $resourceGroupName = 'homew' 
-$location = 'northeurope' 
-$vminfo = Get-AzVM  | where {$_.Tags['snapshot'] -eq "true"}
+$location = Get-AzResourceGroup -Name $resourceGroupName  | select-object -expandproperty location
+$vminfo = Get-AzVM  | where {$_.Tags['Snapshot'] -eq "True"}
 $vmName = $vminfo.Name
 $timestamp = Get-Date -f MM-dd-yyyy_HH_mm_ss
 $snapshotName = "$vmName$timestamp"
@@ -77,7 +77,8 @@ New-AzSnapshot `
 ###    -ResourceGroupName $resourceGroupName
 
 # DESTINATION
-$StorageAccount = "rinisa231120211"
+$sainfo = Get-AzStorageAccount -ResourceGroupName $resourceGroupName | where {$_.Tags['Snapshot'] -eq "True"}
+$StorageAccount = $sainfo.StorageAccountName
 $StorageAccountBlob = "archive"
 $storageaccountResourceGroup = "homew"
 $vhdname = "$snapshotName"
