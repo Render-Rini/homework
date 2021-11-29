@@ -8,5 +8,4 @@ This project creates some Azure resources according with the following requireme
 To create those resources in your Azure subscription, please follow the steps below.
 - Download the files " main.bicep" and " main.parameters.json" to your work directory.
 - Login to your Azure subscription. Use command: ``` Az Login ```
-- ``` Az Login ```
-- Create resource Group for the deployment - az group create -l northeurope -n homew
+- Create the Resource Group for the deployment. Use command: ``` az group create -l northeurope -n homew ```
