@@ -8,4 +8,4 @@ This project creates some Azure resources according with the following requireme
 To create those resources in your Azure subscription, please follow the steps below.
 - Download the files " main.bicep" and " main.parameters.json" to your work directory.
 - Login to your Azure subscription. Use command: ``` Az Login ```
-- Create the Resource Group for the deployment. Use command: ``` az group create -l northeurope -n homew ```
+- Create the Resource Group for the deployment. Use command: ``` az group create -l northeurope -n homew ``` This command will create Resource group "homew" in the NorthEurope Azure region. Please be informed that the name "homew" is also used in the Runbook which creates and and copies the snapshots from VM. If you would like to change it this value also should be changed in the Runbook.
