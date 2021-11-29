@@ -1,6 +1,6 @@
 # Introduction
 This project creates some Azure resources according with the following requirements:
-- A simple Windows VM is deployed and have external File Storage (external mounted Data Disk) mapped,
+- A simple Windows VM is deployed and have external File Storage (external mounted Data Disk) mapped. Powershell DSC should be used fro VM configuration,
 - Azure Blob Storage should be setup in different Azure Region (here VM Snaphots will be backed up),
 - Regular VM backup routine (Runbook in Azure Automation Account) is deployed - the routine should be scheduled to run every hour, take the snapshot of running VM and  store it into Blob.
 
@@ -12,3 +12,6 @@ To create those resources in your Azure subscription, please follow the steps be
 - Set the default resource group for the deployment. Use Command: ``` az configure --defaults group=homew ```
 - From your working directory run the followinfg command: ``` az deployment group create --template-file main.bicep --parameters main.parameters.json ```
 - After a while the resources will be deployed to your Azure Subscription.
+
+# Notes
+There are two external links in the Bicep template. One for the Runbook and the second for the Powershell DSC configuration script. Both are published in this repo.
