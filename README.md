@@ -16,6 +16,5 @@ To create those resources in your Azure subscription, please follow the steps be
 # Notes
 - There are two external links in the Bicep template. One for the Runbook and the second for the Powershell DSC configuration script. Both are published in this repo.
 - You can check if the disk is properly provisioned to the OS of the VM by running Powershell command ``` Get-Disk ``` from the Run Command tile. See image below:
- https://github.com/Render-Rini/homework/blob/main/RunCommand.JPG
  
- ![This is an image](https://github.com/Render-Rini/homework/blob/main/RunCommand.JPG)
+ ![RunCommand Image](https://github.com/Render-Rini/homework/blob/main/RunCommand.JPG)
